@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Utama Kontrapung</title>
+    <!-- Tailwind CSS untuk Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen pb-12">
+
+    <!-- 1. MEMBUAT JUDUL UTAMA WEBSITE -->
+    <header class="bg-slate-900 border-b border-amber-500/30 py-8 px-4 text-center">
+        <span class="bg-amber-500/10 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30">
+            KULIAH KONTRAPUNG
+        </span>
+        <h1 class="text-3xl font-extrabold text-amber-400 mt-3">
+            Modul Pembelajaran & Laboratorium Nada
+        </h1>
+        <p class="text-slate-400 text-sm mt-2">
+            Materi Pembelajaran Mandiri dari Dasar Hingga Latihan Pendengaran
+        </p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 mt-8 space-y-6">
+
+        <!-- 2. MEMBUAT MATERI TEORI -->
+        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+            <h2 class="text-xl font-bold text-amber-300 mb-2">
+                <i class="fa-solid fa-book"></i> Bab 1: Pengenalan Tangga Nada
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+                Tangga nada Mayor dibentuk dengan susunan interval: 
+                <span class="bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded font-bold">1 - 1 - ½ - 1 - 1 - 1 - ½</span>.
+            </p>
+        </section>
+
+        <!-- 3. MEMBUAT PEMUTAR AUDIO (SYNTHESIZER) -->
+        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+            <h2 class="text-xl font-bold text-amber-300 mb-3">
+                <i class="fa-solid fa-volume-high"></i> Tes Audio & Frekuensi
+            </h2>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex gap-3">
+                <button onclick="playAudio(261.63)" class="px-4 py-2 bg-amber-500 text-slate-950 font-bold rounded-lg text-xs">
+                    <i class="fa-solid fa-play"></i> Bunyikan Nada C4 (261 Hz)
+                </button>
+                <button onclick="playAudio(440.00)" class="px-4 py-2 bg-amber-500 text-slate-950 font-bold rounded-lg text-xs">
+                    <i class="fa-solid fa-play"></i> Bunyikan Nada A4 (440 Hz)
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. MEMBUAT KUIS INTERAKTIF -->
+        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
+            <h2 class="text-xl font-bold text-amber-300 mb-3">
+                <i class="fa-solid fa-circle-question"></i> Latihan Soal
+            </h2>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+                <p class="text-sm">Berapa interval dari nada C ke G?</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <button onclick="checkQuiz(false)" class="p-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded text-xs text-left">A. Terts (3rd)</button>
+                    <button onclick="checkQuiz(true)" class="p-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded text-xs text-left">B. Kuint Murni (5th)</button>
+                </div>
+                <div id="quiz-msg" class="hidden p-2 rounded text-xs font-bold text-center"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPT LOGIKA AUDIO & KUIS -->
+    <script>
+        let actx;
+        function playAudio(freq) {
+            if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+            if (actx.state === 'suspended') actx.resume();
+            
+            let osc = actx.createOscillator();
+            let gain = actx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+            
+            gain.gain.setValueAtTime(0, actx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.3, actx.currentTime + 0.05);
+            gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.8);
+            
+            osc.connect(gain);
+            gain.connect(actx.destination);
+            osc.start();
+            osc.stop(actx.currentTime + 0.8);
+        }
+
+        function checkQuiz(isCorrect) {
+            let msg = document.getElementById('quiz-msg');
+            msg.classList.remove('hidden', 'bg-emerald-950', 'text-emerald-300', 'bg-rose-950', 'text-rose-300');
+            if(isCorrect) {
+                msg.classList.add('bg-emerald-950', 'text-emerald-300');
+                msg.textContent = "✓ Jawaban Benar! C ke G adalah 5th (Kuint Murni).";
+                playAudio(523.25);
+            } else {
+                msg.classList.add('bg-rose-950', 'text-rose-300');
+                msg.textContent = "✕ Jawaban Salah, coba hitung lagi!";
+                playAudio(200);
+            }
+        }
+    </script>
+</body>
+</html>
