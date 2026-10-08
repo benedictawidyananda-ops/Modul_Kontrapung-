@@ -3,104 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modul Utama Kontrapung</title>
-    <!-- Tailwind CSS untuk Styling -->
+    <title>Modul Interaktif Kontrapung Spesies 1 - 5</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cinzel & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif-title { font-family: 'Cinzel', serif; }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen pb-12">
+<body class="bg-slate-950 text-slate-100 min-h-screen pb-16">
 
-    <!-- 1. MEMBUAT JUDUL UTAMA WEBSITE -->
-    <header class="bg-slate-900 border-b border-amber-500/30 py-8 px-4 text-center">
-        <span class="bg-amber-500/10 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30">
-            KULIAH KONTRAPUNG
-        </span>
-        <h1 class="text-3xl font-extrabold text-amber-400 mt-3">
-            Modul Pembelajaran & Laboratorium Nada
-        </h1>
-        <p class="text-slate-400 text-sm mt-2">
-            Materi Pembelajaran Mandiri dari Dasar Hingga Latihan Pendengaran
-        </p>
+    <!-- ========================================== -->
+    <!-- 1. HERO BANNER PENGANTAR (MEWAH & ELEGAN) -->
+    <!-- ========================================== -->
+    <header class="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-b border-amber-500/20 py-16 px-6 text-center overflow-hidden">
+        <!-- Accent Glow Effect -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+        <div class="relative max-w-3xl mx-auto space-y-4">
+            <div class="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 text-xs font-semibold px-4 py-1.5 rounded-full border border-amber-500/30 backdrop-blur-sm">
+                <i class="fa-solid fa-music text-amber-400"></i> MODUL TEORI MUSIK LANJUTAN
+            </div>
+            
+            <h1 class="font-serif-title text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 tracking-wide">
+                Kontrapung Spesies 1 – 5
+            </h1>
+            
+            <p class="text-slate-300 text-base leading-relaxed max-w-2xl mx-auto font-light">
+                Selamat datang di laboratorium pembelajaran mandiri. Pelajari seni menyusun garis melodi independen melalui aturan *Strict Counterpoint* berdasarkan tradisi Klasik secara interaktif.
+            </p>
+
+            <!-- Card Ringkasan Statistik -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 max-w-2xl mx-auto">
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-3 rounded-xl text-center">
+                    <span class="block text-amber-400 font-bold text-lg">5 Spesies</span>
+                    <span class="text-xs text-slate-400">Aturan Teknik</span>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-3 rounded-xl text-center">
+                    <span class="block text-amber-400 font-bold text-lg">Cantus Firmus</span>
+                    <span class="text-xs text-slate-400">Melodi Acuan</span>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-3 rounded-xl text-center">
+                    <span class="block text-amber-400 font-bold text-lg">Web Audio</span>
+                    <span class="text-xs text-slate-400">Sintesis Suara</span>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-3 rounded-xl text-center">
+                    <span class="block text-amber-400 font-bold text-lg">Evaluasi</span>
+                    <span class="text-xs text-slate-400">Kuis Mandiri</span>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 mt-8 space-y-6">
+    <main class="max-w-4xl mx-auto px-4 mt-12 space-y-10">
 
-        <!-- 2. MEMBUAT MATERI TEORI -->
-        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-            <h2 class="text-xl font-bold text-amber-300 mb-2">
-                <i class="fa-solid fa-book"></i> Bab 1: Pengenalan Tangga Nada
+        <!-- ========================================== -->
+        <!-- 2. DAFTAR SPESIES KONTRAPUNG (CARD GRID)   -->
+        <!-- ========================================== -->
+        <section class="space-y-4">
+            <h2 class="font-serif-title text-2xl font-bold text-amber-300 flex items-center gap-2 border-b border-slate-800 pb-3">
+                <i class="fa-solid fa-layer-group text-amber-400"></i> Panduan Spesies Kontrapung
             </h2>
-            <p class="text-slate-300 text-sm leading-relaxed">
-                Tangga nada Mayor dibentuk dengan susunan interval: 
-                <span class="bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded font-bold">1 - 1 - ½ - 1 - 1 - 1 - ½</span>.
-            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Spesies 1 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl transition duration-200">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-amber-400">Spesies 1: Note Against Note</h3>
+                        <span class="text-xs font-mono bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded border border-amber-500/20">1 : 1</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">Satu nada kontrapung untuk setiap satu nada Cantus Firmus. Fokus pada interval konsonan murni dan tidak murni.</p>
+                </div>
+
+                <!-- Spesies 2 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl transition duration-200">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-amber-400">Spesies 2: Two Notes Against One</h3>
+                        <span class="text-xs font-mono bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded border border-amber-500/20">2 : 1</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">Dua nada kontrapung melawan satu nada Cantus Firmus. Memperkenalkan nada disonan pada ketukan lemah (*passing tone*).</p>
+                </div>
+
+                <!-- Spesies 3 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl transition duration-200">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-amber-400">Spesies 3: Four Notes Against One</h3>
+                        <span class="text-xs font-mono bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded border border-amber-500/20">4 : 1</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">Empat nada per satu nada acuan. Memungkinkan ornamentasi melodi seperti *neighbor tone* dan *cambiata*.</p>
+                </div>
+
+                <!-- Spesies 4 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl transition duration-200">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-amber-400">Spesies 4: Syncopation / Ligature</h3>
+                        <span class="text-xs font-mono bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded border border-amber-500/20">Sinkop</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">Penggunaan nada gantung (*suspension*). Menciptakan disonan yang diselesaikan turun setengah/satu langkah ke konsonan.</p>
+                </div>
+            </div>
+
+            <!-- Spesies 5 (Full Width) -->
+            <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-amber-950/30 border border-amber-500/30 p-5 rounded-2xl">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-amber-400">Spesies 5: Florid Counterpoint (Gabungan)</h3>
+                    <span class="text-xs font-mono bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded border border-amber-500/30">Free / Florid</span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed">Kombinasi bebas dari Spesies 1 sampai 4 dengan ritme yang bervariasi untuk membentuk kontrapung yang artistik dan mengalir indah.</p>
+            </div>
         </section>
 
-        <!-- 3. MEMBUAT PEMUTAR AUDIO (SYNTHESIZER) -->
-        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-            <h2 class="text-xl font-bold text-amber-300 mb-3">
-                <i class="fa-solid fa-volume-high"></i> Tes Audio & Frekuensi
+        <!-- ========================================== -->
+        <!-- 3. INTERACTIVE AUDIO SYNTHESIZER           -->
+        <!-- ========================================== -->
+        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h2 class="font-serif-title text-xl font-bold text-amber-300 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-amber-400"></i> Laboratorium Interval Audio
             </h2>
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex gap-3">
-                <button onclick="playAudio(261.63)" class="px-4 py-2 bg-amber-500 text-slate-950 font-bold rounded-lg text-xs">
-                    <i class="fa-solid fa-play"></i> Bunyikan Nada C4 (261 Hz)
+            <p class="text-xs text-slate-300">Uji pendengaran interval konsonan sempurna (Perfect Consonance) untuk Spesies 1:</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <button onclick="bunyikanInterval(261.63, 392.00)" class="p-3 bg-slate-950 hover:bg-slate-800 border border-slate-700 hover:border-amber-400 rounded-xl text-xs font-bold text-amber-300 flex items-center justify-center gap-2 transition">
+                    <i class="fa-solid fa-play text-amber-400"></i> C4 + G4 (Kuint Murni)
                 </button>
-                <button onclick="playAudio(440.00)" class="px-4 py-2 bg-amber-500 text-slate-950 font-bold rounded-lg text-xs">
-                    <i class="fa-solid fa-play"></i> Bunyikan Nada A4 (440 Hz)
+                <button onclick="bunyikanInterval(261.63, 523.25)" class="p-3 bg-slate-950 hover:bg-slate-800 border border-slate-700 hover:border-amber-400 rounded-xl text-xs font-bold text-amber-300 flex items-center justify-center gap-2 transition">
+                    <i class="fa-solid fa-play text-amber-400"></i> C4 + C5 (Oktaf)
+                </button>
+                <button onclick="bunyikanInterval(261.63, 329.63)" class="p-3 bg-slate-950 hover:bg-slate-800 border border-slate-700 hover:border-amber-400 rounded-xl text-xs font-bold text-amber-300 flex items-center justify-center gap-2 transition">
+                    <i class="fa-solid fa-play text-amber-400"></i> C4 + E4 (Terts Mayor)
                 </button>
             </div>
         </section>
 
-        <!-- 4. MEMBUAT KUIS INTERAKTIF -->
-        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-            <h2 class="text-xl font-bold text-amber-300 mb-3">
-                <i class="fa-solid fa-circle-question"></i> Latihan Soal
+        <!-- ========================================== -->
+        <!-- 4. KUIS EVALUASI MANDIRI                   -->
+        <!-- ========================================== -->
+        <section class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h2 class="font-serif-title text-xl font-bold text-amber-300 flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-amber-400"></i> Evaluasi Pemahaman
             </h2>
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
-                <p class="text-sm">Berapa interval dari nada C ke G?</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    <button onclick="checkQuiz(false)" class="p-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded text-xs text-left">A. Terts (3rd)</button>
-                    <button onclick="checkQuiz(true)" class="p-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded text-xs text-left">B. Kuint Murni (5th)</button>
+
+            <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-4">
+                <p class="text-sm font-semibold text-slate-200">
+                    Soal: Teknik penyelesaian nada gantung (*suspension*) pada Spesies 4 idealnya melangkah ke arah mana?
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button onclick="jawab(false)" class="p-3 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl text-xs text-left text-slate-300">
+                        A. Naik melompat 3 langkah
+                    </button>
+                    <button onclick="jawab(true)" class="p-3 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-xl text-xs text-left text-slate-300">
+                        B. Turun secara bertahap (stepwise) ke konsonan
+                    </button>
                 </div>
-                <div id="quiz-msg" class="hidden p-2 rounded text-xs font-bold text-center"></div>
+
+                <div id="hasil-kuis" class="hidden p-3 rounded-lg text-xs font-bold text-center"></div>
             </div>
         </section>
 
     </main>
 
-    <!-- SCRIPT LOGIKA AUDIO & KUIS -->
+    <footer class="text-center text-xs text-slate-500 mt-16">
+        © 2026 Modul Pembelajaran Kontrapung - GitHub Pages
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT -->
     <script>
         let actx;
-        function playAudio(freq) {
+        function bunyikanInterval(f1, f2) {
             if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
             if (actx.state === 'suspended') actx.resume();
-            
-            let osc = actx.createOscillator();
-            let gain = actx.createGain();
-            osc.type = 'sine';
-            osc.frequency.value = freq;
-            
-            gain.gain.setValueAtTime(0, actx.currentTime);
-            gain.gain.linearRampToValueAtTime(0.3, actx.currentTime + 0.05);
-            gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.8);
-            
-            osc.connect(gain);
-            gain.connect(actx.destination);
-            osc.start();
-            osc.stop(actx.currentTime + 0.8);
+
+            [f1, f2].forEach(freq => {
+                let osc = actx.createOscillator();
+                let gain = actx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0, actx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.2, actx.currentTime + 0.05);
+                gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 1.2);
+                osc.connect(gain);
+                gain.connect(actx.destination);
+                osc.start();
+                osc.stop(actx.currentTime + 1.2);
+            });
         }
 
-        function checkQuiz(isCorrect) {
-            let msg = document.getElementById('quiz-msg');
-            msg.classList.remove('hidden', 'bg-emerald-950', 'text-emerald-300', 'bg-rose-950', 'text-rose-300');
+        function jawab(isCorrect) {
+            let res = document.getElementById('hasil-kuis');
+            res.classList.remove('hidden', 'bg-emerald-950', 'text-emerald-300', 'bg-rose-950', 'text-rose-300');
             if(isCorrect) {
-                msg.classList.add('bg-emerald-950', 'text-emerald-300');
-                msg.textContent = "✓ Jawaban Benar! C ke G adalah 5th (Kuint Murni).";
-                playAudio(523.25);
+                res.classList.add('bg-emerald-950', 'text-emerald-300');
+                res.textContent = "✓ TEPAT! Suspension diselesaikan dengan melangkah turun 1 langkah ke interval konsonan.";
+                bunyikanInterval(261.63, 523.25);
             } else {
-                msg.classList.add('bg-rose-950', 'text-rose-300');
-                msg.textContent = "✕ Jawaban Salah, coba hitung lagi!";
-                playAudio(200);
+                res.classList.add('bg-rose-950', 'text-rose-300');
+                res.textContent = "✕ KURANG TEPAT! Coba baca kembali aturan penyelesaian nada gantung Spesies 4.";
             }
         }
     </script>
